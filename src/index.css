@@ -127,6 +127,10 @@ form {
 	padding: 3.2rem 4rem;
 }
 
+.form-split-bill input {
+	text-align: right;
+}
+
 label {
 	font-weight: 500;
 }

@@ -11,12 +11,12 @@ export default function Friend({ friend, onSelect, selectedFriend }) {
 
 			{balance < 0 && (
 				<p className="red">
-					You own ${name} ${Math.abs(balance)}
+					You own {name} ${Math.abs(balance)}
 				</p>
 			)}
 			{balance > 0 && (
 				<p className="green">
-					${name} owes you ${Math.abs(balance)}
+					{name} owes you ${Math.abs(balance)}
 				</p>
 			)}
 			{balance === 0 && <p>You and {name} are even</p>}

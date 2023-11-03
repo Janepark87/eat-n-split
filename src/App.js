@@ -21,6 +21,18 @@ export default function App() {
 		setShowAddFriend(false);
 	};
 
+	const handleUpdateBlanceBySplitBill = (value) => {
+		setFriends((friends) =>
+			friends.map((friend) =>
+				friend.id === selectedFriend.id //
+					? { ...friend, balance: friend.balance + value }
+					: friend
+			)
+		);
+
+		setSelectedFriend(null);
+	};
+
 	return (
 		<div className="app">
 			<aside className="sidebar">
@@ -31,7 +43,7 @@ export default function App() {
 				<Button onClick={() => setShowAddFriend((show) => !show)}>{showAddFriend ? 'Close' : 'Add friend'}</Button>
 			</aside>
 
-			{selectedFriend && <FormSplitBill selectedFriend={selectedFriend} />}
+			{selectedFriend && <FormSplitBill selectedFriend={selectedFriend} onSplitBill={handleUpdateBlanceBySplitBill} />}
 		</div>
 	);
 }
