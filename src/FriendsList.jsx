@@ -1,10 +1,9 @@
 import Friend from './components/Friend';
-import { initialFriends } from './data/friends-data';
 
-export default function FriendsList() {
+export default function FriendsList({ friends }) {
 	return (
 		<ul>
-			{initialFriends.map((friend) => (
+			{friends.map((friend) => (
 				<Friend key={friend.id} friend={friend} />
 			))}
 		</ul>
