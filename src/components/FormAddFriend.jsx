@@ -7,10 +7,10 @@ export default function AddFriendForm({ onAddFriend }) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+
+		if (!name || !imgSrc) return;
+
 		const id = crypto.randomUUID();
-
-		if (!name || !setName) return;
-
 		const newFriend = {
 			id,
 			name,
@@ -19,7 +19,6 @@ export default function AddFriendForm({ onAddFriend }) {
 		};
 
 		onAddFriend(newFriend);
-
 		setName('');
 		setImgSrc('https://i.pravatar.cc/48');
 	};
